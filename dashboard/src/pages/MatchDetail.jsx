@@ -127,7 +127,7 @@ export default function MatchDetail() {
       {/* Feedback */}
       <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
         <h2 className="font-semibold mb-3">Your Feedback</h2>
-        <p className="text-sm text-gray-500 mb-4">Help JobLens learn your preferences — your feedback improves future matches.</p>
+        <p className="text-sm text-gray-500 mb-4">Help RogerThat learn your preferences — your feedback improves future matches.</p>
 
         <textarea value={feedbackText} onChange={e => setFeedbackText(e.target.value)} rows={2}
           placeholder="Optional: tell us why you liked or disliked this match..."

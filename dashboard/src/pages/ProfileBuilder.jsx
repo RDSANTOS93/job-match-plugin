@@ -91,7 +91,7 @@ export default function ProfileBuilder() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">Your Profile</h1>
-          <p className="text-gray-500 text-sm">Build your profile so JobLens can find your best matches</p>
+          <p className="text-gray-500 text-sm">Build your profile so RogerThat can find your best matches</p>
         </div>
         <button onClick={handleSave} disabled={saving}
           className="flex items-center gap-2 px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors disabled:opacity-50">
@@ -235,7 +235,7 @@ export default function ProfileBuilder() {
         {/* Career Ambitions */}
         <section className="bg-gray-900 border border-primary-800/30 rounded-xl p-5">
           <h2 className="font-semibold mb-1">Career Ambitions</h2>
-          <p className="text-sm text-gray-500 mb-3">This is what makes JobLens different — we match based on where you're heading, not just where you've been.</p>
+          <p className="text-sm text-gray-500 mb-3">This is what makes RogerThat different — we match based on where you're heading, not just where you've been.</p>
           <textarea value={profile.ambitions || ''} onChange={e => setProfile({ ...profile, ambitions: e.target.value })} rows={5}
             placeholder="Where do you see yourself in 2-3 years? What kind of role are you growing toward? What matters most to you in your next position? Are you looking to shift industries or specializations?"
             className={inputClass} />

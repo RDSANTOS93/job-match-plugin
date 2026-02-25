@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "JobLens - Smart Job Matcher",
+  "name": "RogerThat - Smart Job Matcher",
   "version": "1.0.0",
-  "description": "AI-powered job matching that understands your ambitions, not just your keywords.",
+  "description": "AI job matching that receives your ambitions, understands the assignment, and gets you the best matches.",
   "permissions": ["activeTab", "storage", "alarms", "notifications"],
   "host_permissions": ["http://localhost:3001/*"],
   "background": {

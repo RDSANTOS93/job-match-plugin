@@ -12,7 +12,7 @@ import jobRoutes from './routes/jobs.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3001;
-const DB_PATH = process.env.DATABASE_PATH || path.join(__dirname, '..', 'data', 'joblens.db');
+const DB_PATH = process.env.DATABASE_PATH || path.join(__dirname, '..', 'data', 'rogerthat.db');
 
 // Initialize database
 initDatabase(DB_PATH);
@@ -42,5 +42,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`JobLens API running on http://localhost:${PORT}`);
+  console.log(`RogerThat API running on http://localhost:${PORT}`);
 });

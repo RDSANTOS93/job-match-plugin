@@ -13,7 +13,7 @@ export async function scoreJobs(userProfile, jobs) {
   const profileSummary = buildProfileSummary(userProfile);
   const jobDescriptions = jobs.map((job, i) => buildJobEntry(job, i)).join('\n---\n');
 
-  const systemPrompt = `You are JobLens, an expert career advisor and job matching engine. Your role is to assess how well job opportunities align with a candidate's profile, considering not just their current skills and experience, but critically their career AMBITIONS — where they want to grow.
+  const systemPrompt = `You are RogerThat, an expert career advisor and job matching engine. Your role is to assess how well job opportunities align with a candidate's profile, considering not just their current skills and experience, but critically their career AMBITIONS — where they want to grow.
 
 You evaluate matches across 5 dimensions, each scored 0-100:
 1. **Skill Match**: How well do the candidate's current skills match the job requirements?

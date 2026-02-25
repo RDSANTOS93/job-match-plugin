@@ -26,7 +26,7 @@ export default function Layout() {
       <aside className={`fixed inset-y-0 left-0 z-50 w-64 bg-gray-900 border-r border-gray-800 transform transition-transform lg:relative lg:translate-x-0 ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex items-center gap-2 px-6 py-5 border-b border-gray-800">
           <Diamond className="w-6 h-6 text-primary-500" />
-          <span className="text-lg font-bold text-primary-300">JobLens</span>
+          <span className="text-lg font-bold text-primary-300">RogerThat</span>
         </div>
 
         <nav className="flex flex-col gap-1 p-4">
@@ -75,7 +75,7 @@ export default function Layout() {
           </button>
           <div className="flex items-center gap-2">
             <Diamond className="w-5 h-5 text-primary-500" />
-            <span className="font-bold text-primary-300">JobLens</span>
+            <span className="font-bold text-primary-300">RogerThat</span>
           </div>
         </header>
 

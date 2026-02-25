@@ -83,7 +83,7 @@ async function scoreJobs(jobs) {
 
     return { scores: result.scores };
   } catch (err) {
-    console.error('JobLens: Failed to score jobs', err);
+    console.error('RogerThat: Failed to score jobs', err);
     throw err;
   }
 }
@@ -144,7 +144,7 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
       }
     }
   } catch (err) {
-    console.error('JobLens: Periodic check failed', err);
+    console.error('RogerThat: Periodic check failed', err);
   }
 });
 

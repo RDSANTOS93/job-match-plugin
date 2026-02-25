@@ -1,5 +1,5 @@
 (() => {
-  const PROCESSED_ATTR = 'data-joblens-processed';
+  const PROCESSED_ATTR = 'data-rogerthat-processed';
   let scoringInProgress = false;
 
   function extractJobCards() {
@@ -62,7 +62,7 @@
         });
       }
     } catch (err) {
-      console.error('JobLens: Indeed scoring failed', err);
+      console.error('RogerThat: Indeed scoring failed', err);
       cards.forEach(c => c.element.removeAttribute(PROCESSED_ATTR));
     }
 
@@ -74,14 +74,14 @@
     const level = score >= 80 ? 'high' : score >= 60 ? 'medium' : 'low';
 
     const badge = document.createElement('div');
-    badge.className = `joblens-badge joblens-badge--${level}`;
+    badge.className = `rogerthat-badge rogerthat-badge--${level}`;
     badge.innerHTML = `
-      <svg class="joblens-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <svg class="rogerthat-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
       </svg>
       ${score}%
-      <div class="joblens-tooltip">
-        <div class="joblens-tooltip__title">JobLens Match Analysis</div>
+      <div class="rogerthat-tooltip">
+        <div class="rogerthat-tooltip__title">RogerThat Match Analysis</div>
         <div>${escapeHtml(explanation || 'Analyzing match...')}</div>
         ${factors ? renderFactors(factors) : ''}
       </div>
@@ -108,14 +108,14 @@
       growthPotential: 'Growth',
     };
 
-    let html = '<div class="joblens-factors">';
+    let html = '<div class="rogerthat-factors">';
     for (const [key, label] of Object.entries(labels)) {
       const value = factors[key] || 0;
       html += `
-        <div class="joblens-factor">
-          <span class="joblens-factor__label">${label}</span>
-          <div class="joblens-factor__bar">
-            <div class="joblens-factor__fill" style="width: ${value}%"></div>
+        <div class="rogerthat-factor">
+          <span class="rogerthat-factor__label">${label}</span>
+          <div class="rogerthat-factor__bar">
+            <div class="rogerthat-factor__fill" style="width: ${value}%"></div>
           </div>
         </div>
       `;

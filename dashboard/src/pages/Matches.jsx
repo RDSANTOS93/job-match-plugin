@@ -86,7 +86,7 @@ export default function Matches() {
           <p className="text-sm text-gray-600 mt-2">
             {status !== 'all' || minScore > 0
               ? 'Try adjusting your filters'
-              : 'Install the JobLens extension and browse job listings to start matching'}
+              : 'Install the RogerThat extension and browse job listings to start matching'}
           </p>
         </div>
       )}

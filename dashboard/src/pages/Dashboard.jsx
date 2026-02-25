@@ -106,7 +106,7 @@ export default function Dashboard() {
           <div className="bg-gray-900 border border-gray-800 rounded-xl p-8 text-center">
             <Briefcase className="w-10 h-10 text-gray-700 mx-auto mb-3" />
             <p className="text-gray-400">No matches yet</p>
-            <p className="text-sm text-gray-600 mt-1">Browse job listings on LinkedIn or Indeed with the JobLens extension installed to start matching.</p>
+            <p className="text-sm text-gray-600 mt-1">Browse job listings on LinkedIn or Indeed with the RogerThat extension installed to start matching.</p>
           </div>
         )}
       </div>

@@ -30,7 +30,7 @@ export default function Login() {
       <div className="w-full max-w-sm">
         <div className="flex items-center justify-center gap-2 mb-8">
           <Diamond className="w-8 h-8 text-primary-500" />
-          <span className="text-2xl font-bold text-primary-300">JobLens</span>
+          <span className="text-2xl font-bold text-primary-300">RogerThat</span>
         </div>
 
         <form onSubmit={handleSubmit} className="bg-gray-900 border border-gray-800 rounded-xl p-6 space-y-4">

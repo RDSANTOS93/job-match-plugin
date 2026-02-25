@@ -1,5 +1,5 @@
 (() => {
-  const PROCESSED_ATTR = 'data-joblens-processed';
+  const PROCESSED_ATTR = 'data-rogerthat-processed';
   let scoringInProgress = false;
 
   // --- Job Listing Detection & Scoring ---
@@ -62,7 +62,7 @@
         });
       }
     } catch (err) {
-      console.error('JobLens: Scoring failed', err);
+      console.error('RogerThat: Scoring failed', err);
       // Remove processed attr so they can be retried
       cards.forEach(c => c.element.removeAttribute(PROCESSED_ATTR));
     }
@@ -75,14 +75,14 @@
     const level = score >= 80 ? 'high' : score >= 60 ? 'medium' : 'low';
 
     const badge = document.createElement('div');
-    badge.className = `joblens-badge joblens-badge--${level}`;
+    badge.className = `rogerthat-badge rogerthat-badge--${level}`;
     badge.innerHTML = `
-      <svg class="joblens-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <svg class="rogerthat-badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
         <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
       </svg>
       ${score}%
-      <div class="joblens-tooltip">
-        <div class="joblens-tooltip__title">JobLens Match Analysis</div>
+      <div class="rogerthat-tooltip">
+        <div class="rogerthat-tooltip__title">RogerThat Match Analysis</div>
         <div>${escapeHtml(explanation || 'Analyzing match...')}</div>
         ${factors ? renderFactors(factors) : ''}
       </div>
@@ -109,14 +109,14 @@
       growthPotential: 'Growth',
     };
 
-    let html = '<div class="joblens-factors">';
+    let html = '<div class="rogerthat-factors">';
     for (const [key, label] of Object.entries(labels)) {
       const value = factors[key] || 0;
       html += `
-        <div class="joblens-factor">
-          <span class="joblens-factor__label">${label}</span>
-          <div class="joblens-factor__bar">
-            <div class="joblens-factor__fill" style="width: ${value}%"></div>
+        <div class="rogerthat-factor">
+          <span class="rogerthat-factor__label">${label}</span>
+          <div class="rogerthat-factor__bar">
+            <div class="rogerthat-factor__fill" style="width: ${value}%"></div>
           </div>
         </div>
       `;
@@ -132,21 +132,21 @@
   }
 
   function injectImportButton() {
-    if (document.querySelector('.joblens-import-btn')) return;
+    if (document.querySelector('.rogerthat-import-btn')) return;
     if (!isProfilePage()) return;
 
     const btn = document.createElement('button');
-    btn.className = 'joblens-import-btn';
+    btn.className = 'rogerthat-import-btn';
     btn.innerHTML = `
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
       </svg>
-      Import to JobLens
+      Import to RogerThat
     `;
 
     btn.addEventListener('click', async () => {
-      btn.classList.add('joblens-import-btn--loading');
-      btn.innerHTML = '<div class="joblens-spinner"></div> Importing...';
+      btn.classList.add('rogerthat-import-btn--loading');
+      btn.innerHTML = '<div class="rogerthat-spinner"></div> Importing...';
 
       try {
         const profileData = extractProfileData();
@@ -155,7 +155,7 @@
         btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
         setTimeout(() => btn.remove(), 3000);
       } catch (err) {
-        btn.classList.remove('joblens-import-btn--loading');
+        btn.classList.remove('rogerthat-import-btn--loading');
         btn.innerHTML = 'Import Failed — Retry';
         btn.style.background = 'linear-gradient(135deg, #dc2626, #ef4444)';
       }
