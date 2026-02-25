@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobLens</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Loading State -->
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Not Authenticated -->
+    <div id="auth-section" class="section hidden">
+      <div class="logo">
+        <span class="logo-icon">&#9670;</span> JobLens
+      </div>
+      <p class="subtitle">Smart job matching powered by AI</p>
+      <a href="http://localhost:5173/register" target="_blank" class="btn btn--primary btn--full">Get Started</a>
+      <a href="http://localhost:5173/login" target="_blank" class="btn btn--secondary btn--full">Log In</a>
+    </div>
+
+    <!-- Authenticated -->
+    <div id="main-section" class="section hidden">
+      <div class="header">
+        <div class="logo-small">
+          <span class="logo-icon">&#9670;</span> JobLens
+        </div>
+        <div class="user-name" id="user-name"></div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <div class="stat">
+          <div class="stat__value" id="stat-total">0</div>
+          <div class="stat__label">Total Matches</div>
+        </div>
+        <div class="stat stat--highlight">
+          <div class="stat__value" id="stat-strong">0</div>
+          <div class="stat__label">Strong (80%+)</div>
+        </div>
+        <div class="stat">
+          <div class="stat__value" id="stat-today">0</div>
+          <div class="stat__label">New Today</div>
+        </div>
+      </div>
+
+      <!-- Recent Matches -->
+      <div class="recent">
+        <div class="recent__header">Recent Strong Matches</div>
+        <div id="matches-list" class="matches-list">
+          <div class="empty-state">No matches yet. Browse job listings to start matching.</div>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <a href="http://localhost:5173" target="_blank" class="btn btn--primary btn--full">Open Dashboard</a>
+        <div class="toggle-row">
+          <span>Notifications</span>
+          <label class="toggle">
+            <input type="checkbox" id="notifications-toggle" checked>
+            <span class="toggle__slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
